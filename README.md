@@ -74,4 +74,5 @@ Developed and customized by: Amid Ahadi
 - Email: amid.ahadi@gmail.com
 - Website: [c-security.ir](http://c-security.ir)
 
-For full details from the original system, please refer to the documentation in the [Help.html](help.html)
+For full details from the original system, please refer to the [Programmer Site](https://c-security.ir/Help.html).
+
