@@ -1,0 +1,333 @@
+/*
+ * dark-mode.css
+ * This file contains RTL overrides for your LTR stylesheets.
+ * Load this file AFTER your default LTR stylesheets (e.g., bootstrap.min.css, AdminLTE.css).
+ */
+
+/* General Body and Text Alignment */
+body.dark-mode {
+    background-color: #2e3640; /* Dark background for the overall page */
+    color: #e0e0e0; /* Lighter text color */
+}
+
+/* AdminLTE Specific Overrides */
+
+/* --- Layout Structure --- */
+body.dark-mode .wrapper {
+    background-color: #2e3640;
+}
+body.dark-mode .content-wrapper,
+body.dark-mode .right-side {
+    background-color: #2e3640; /* Darker content background */
+    color: #e0e0e0;
+}
+
+/* --- Header / Navbar --- */
+body.dark-mode .main-header .navbar {
+    background-color: #212529; /* Darker navbar background */
+    border-color: #343a40;
+}
+body.dark-mode .main-header .navbar .sidebar-toggle {
+    color: #e0e0e0;
+}
+body.dark-mode .main-header .navbar .sidebar-toggle:hover {
+    background-color: #343a40;
+    color: #ffffff;
+}
+body.dark-mode .main-header .navbar .nav > li > a {
+    color: #e0e0e0; /* Navbar link color */
+}
+body.dark-mode .main-header .navbar .nav > li > a:hover,
+body.dark-mode .main-header .navbar .nav > li > a:focus,
+body.dark-mode .main-header .navbar .nav .open > a,
+body.dark-mode .main-header .navbar .nav .open > a:hover,
+body.dark-mode .main-header .navbar .nav .open > a:focus {
+    background: #343a40; /* Hover/focus/open state */
+    color: #ffffff;
+}
+body.dark-mode .main-header .logo {
+    background-color: #212529; /* Darker logo area */
+    color: #f8f9fa;
+    border-bottom: 0px solid #212529; /* Remove light border if any */
+}
+body.dark-mode .main-header .logo:hover {
+    background-color: #212529;
+}
+
+/* Dropdown menus in navbar (messages, notifications, user menu) */
+body.dark-mode .navbar-nav > .messages-menu .dropdown-menu,
+body.dark-mode .navbar-nav > .notifications-menu .dropdown-menu,
+body.dark-mode .navbar-nav > .tasks-menu .dropdown-menu,
+body.dark-mode .navbar-nav > .user-menu .dropdown-menu {
+    background-color: #2c3b41; /* Dark background for dropdowns */
+    border-color: #444;
+}
+body.dark-mode .navbar-nav > .messages-menu .dropdown-menu li.header,
+body.dark-mode .navbar-nav > .notifications-menu .dropdown-menu li.header,
+body.dark-mode .navbar-nav > .tasks-menu .dropdown-menu li.header {
+    background-color: #343a40; /* Header of dropdown */
+    color: #e0e0e0;
+    border-bottom: 1px solid #444;
+}
+body.dark-mode .navbar-nav > .messages-menu .dropdown-menu li.footer a,
+body.dark-mode .navbar-nav > .notifications-menu .dropdown-menu li.footer a,
+body.dark-mode .navbar-nav > .tasks-menu .dropdown-menu li.footer a {
+    background-color: #343a40;
+    color: #ffffff;
+    border-top: 1px solid #444;
+}
+body.dark-mode .navbar-nav > .user-menu .dropdown-menu > li.user-header {
+    background-color: #212529; /* User menu header */
+    color: #ffffff;
+}
+body.dark-mode .navbar-nav > .user-menu .dropdown-menu > li.user-body {
+    background-color: #2c3b41;
+    border-bottom: 1px solid #444;
+    border-top: 1px solid #444;
+}
+body.dark-mode .navbar-nav > .user-menu .dropdown-menu > li.user-body a {
+    color: #b8c7ce;
+}
+body.dark-mode .navbar-nav > .user-menu .dropdown-menu > li.user-footer {
+    background-color: #343a40;
+}
+body.dark-mode .navbar-nav > .user-menu .dropdown-menu > li.user-footer .btn-default {
+    background-color: #495057;
+    border-color: #6c757d;
+    color: #e0e0e0;
+}
+body.dark-mode .control-sidebar-bg {
+    background-color: #212529; /* For the right control sidebar background */
+}
+
+/* --- Sidebar --- */
+body.dark-mode .left-side,
+body.dark-mode .main-sidebar {
+    background-color: #2c3b41; /* Dark sidebar background */
+}
+body.dark-mode .sidebar {
+    color: #b8c7ce;
+}
+body.dark-mode .sidebar-menu > li > a {
+    color: #b8c7ce; /* Sidebar link color */
+}
+body.dark-mode .sidebar-menu > li > a:hover,
+body.dark-mode .sidebar-menu > li.active > a {
+    background-color: #212529; /* Active/hover sidebar item */
+    color: #ffffff;
+}
+body.dark-mode .sidebar-menu .treeview-menu > li > a {
+    color: #a0acb5; /* Sub-menu item color */
+}
+body.dark-mode .sidebar-menu .treeview-menu > li > a:hover {
+    background-color: #343a40;
+}
+body.dark-mode .sidebar-menu > li.header {
+    background-color: #212529; /* Sidebar header like "MAIN NAVIGATION" */
+    color: #84989e;
+}
+body.dark-mode .sidebar-form input[type="text"],
+body.dark-mode .sidebar-form .btn {
+    background-color: #495057;
+    border-color: #6c757d;
+    color: #e0e0e0;
+}
+body.dark-mode .sidebar-form input[type="text"]::-webkit-input-placeholder { color: #aaa; }
+body.dark-mode .sidebar-form input[type="text"]:-moz-placeholder { color: #aaa; }
+body.dark-mode .sidebar-form input[type="text"]::-moz-placeholder { color: #aaa; }
+body.dark-mode .sidebar-form input[type="text"]:-ms-input-placeholder { color: #aaa; }
+
+/* --- Content Header (Page header with breadcrumbs) --- */
+body.dark-mode .content-header {
+    background: #2c3b41; /* Darker header background */
+    color: #e0e0e0;
+    border-bottom: 1px solid #444;
+}
+body.dark-mode .content-header h1 {
+    color: #e0e0e0;
+}
+body.dark-mode .breadcrumb li,
+body.dark-mode .breadcrumb li a {
+    color: #b8c7ce;
+}
+body.dark-mode .breadcrumb li.active {
+    color: #f8f9fa;
+}
+
+/* --- Boxes (AdminLTE) --- */
+body.dark-mode .box {
+    background-color: #2c3b41; /* Darker box background */
+    border-top-color: #444; /* Darker border for boxes */
+    color: #e0e0e0; /* Default text color in boxes */
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2); /* Adjust shadow for dark mode */
+}
+body.dark-mode .box-header {
+    background-color: #2c3b41;
+    border-bottom-color: #444;
+    color: #e0e0e0;
+}
+body.dark-mode .box-title {
+    color: #e0e0e0;
+}
+body.dark-mode .box-body {
+    background-color: #2c3b41;
+    color: #e0e0e0;
+}
+body.dark-mode .box-footer {
+    background-color: #2c3b41;
+    border-top-color: #444;
+    color: #e0e0e0;
+}
+
+/* --- Form Elements --- */
+body.dark-mode .form-control {
+    background-color: #495057; /* Darker input fields */
+    border-color: #6c757d;
+    color: #e0e0e0;
+}
+body.dark-mode .form-control:focus {
+    border-color: #88929e;
+    box-shadow: 0 0 0 0.2rem rgba(108, 117, 125, 0.25);
+}
+body.dark-mode label {
+    color: #e0e0e0;
+}
+body.dark-mode select.form-control {
+    color: #e0e0e0;
+}
+body.dark-mode textarea.form-control {
+    background-color: #495057;
+    border-color: #6c757d;
+    color: #e0e0e0;
+}
+
+/* --- Buttons --- */
+body.dark-mode .btn-default {
+    background-color: #495057;
+    border-color: #6c757d;
+    color: #e0e0e0;
+}
+body.dark-mode .btn-default:hover {
+    background-color: #5a6268;
+    border-color: #6c757d;
+}
+/* You'll need to define styles for other button types (btn-primary, btn-info, btn-success, btn-warning, btn-danger) */
+/* Example for btn-primary: */
+body.dark-mode .btn-primary {
+    background-color: #0069d9;
+    border-color: #0062cc;
+    color: #ffffff;
+}
+body.dark-mode .btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+}
+
+
+/* --- Tables --- */
+body.dark-mode .table {
+    color: #e0e0e0;
+}
+body.dark-mode .table > thead > tr > th,
+body.dark-mode .table > tbody > tr > th,
+body.dark-mode .table > tfoot > tr > th,
+body.dark-mode .table > thead > tr > td,
+body.dark-mode .table > tbody > tr > td,
+body.dark-mode .table > tfoot > tr > td {
+    border-top-color: #444;
+}
+body.dark-mode .table-bordered > thead > tr > th,
+body.dark-mode .table-bordered > tbody > tr > th,
+body.dark-mode .table-bordered > tfoot > tr > th,
+body.dark-mode .table-bordered > thead > tr > td,
+body.dark-mode .table-bordered > tbody > tr > td,
+body.dark-mode .table-bordered > tfoot > tr > td {
+    border-color: #444;
+}
+body.dark-mode .table-striped > tbody > tr:nth-of-type(odd) {
+    background-color: #3a4147; /* Darker stripe color */
+}
+body.dark-mode .table-hover > tbody > tr:hover {
+    background-color: #444c54; /* Hover color for tables */
+}
+
+/* --- DataTables (if used) --- */
+body.dark-mode .dataTables_wrapper .dataTables_paginate .paginate_button {
+    color: #e0e0e0 !important; /* Important might be needed for DataTables */
+}
+body.dark-mode .dataTables_wrapper .dataTables_paginate .paginate_button.current,
+body.dark-mode .dataTables_wrapper .dataTables_paginate .paginate_button.current:hover {
+    background-color: #007bff !important;
+    border-color: #007bff !important;
+    color: #ffffff !important;
+}
+body.dark-mode .dataTables_wrapper .dataTables_length select,
+body.dark-mode .dataTables_wrapper .dataTables_filter input {
+    background-color: #495057;
+    border-color: #6c757d;
+    color: #e0e0e0;
+}
+body.dark-mode .dataTables_wrapper .dataTables_info {
+    color: #b8c7ce;
+}
+
+/* --- Alerts --- */
+body.dark-mode .alert {
+    color: #d1ecf1;
+    background-color: #2c3b41;
+    border-color: #3a4147;
+}
+body.dark-mode .alert-danger {
+    color: #f5c6cb;
+    background-color: #721c24;
+    border-color: #f5c6cb;
+}
+body.dark-mode .alert-info {
+    color: #bee5eb;
+    background-color: #0c5460;
+    border-color: #c3e6cb;
+}
+body.dark-mode .alert-success {
+    color: #c3e6cb;
+    background-color: #155724;
+    border-color: #1c7430;
+}
+body.dark-mode .alert-warning {
+    color: #ffeeba;
+    background-color: #664d03;
+    border-color: #ffc107;
+}
+
+/* --- Modals --- */
+body.dark-mode .modal-content {
+    background-color: #2c3b41;
+    color: #e0e0e0;
+}
+body.dark-mode .modal-header {
+    border-bottom: 1px solid #444;
+}
+body.dark-mode .modal-footer {
+    border-top: 1px solid #444;
+}
+
+/* --- Panels / Widgets --- */
+body.dark-mode .panel {
+    background-color: #2c3b41;
+    border-color: #444;
+}
+body.dark-mode .panel-heading {
+    background-color: #343a40;
+    border-bottom: 1px solid #444;
+    color: #e0e0e0;
+}
+body.dark-mode .panel-body {
+    background-color: #2c3b41;
+    color: #e0e0e0;
+}
+body.dark-mode .panel-footer {
+    background-color: #343a40;
+    border-top: 1px solid #444;
+    color: #e0e0e0;
+}
+
+/* Add any other specific elements you notice aren't being styled */
