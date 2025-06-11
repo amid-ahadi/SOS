@@ -2,7 +2,7 @@
 
 Suhrawardi Online System (SOS) is a web-based application for law firms to maintain their office. This software is designed to be easy to operate and a light system tool to maintain information about Clients, Cases, Hearings, etc.
 
-For more detailed original documentation (which may refer to the system by a generic name), please see [Documentation/index.html](Documentation/index.html).
+For more detailed original documentation (which may refer to the system by a generic name), please see [help.html](Help.html).
 
 ## Server Requirements
 
