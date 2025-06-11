@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مستندات سیستم مدیریت دفتر وکلا</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Vazirmatn', sans-serif;
+        }
+        .content-section {
+            display: none;
+        }
+        .content-section.active {
+            display: block;
+        }
+        .lang-en, .lang-fa { display: none; }
+        html[lang="fa"] .lang-fa { display: block; }
+        html[lang="en"] .lang-en { display: block; }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 400px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 400px;
+            max-height: 50vh;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <div id="app-container" class="flex flex-col md:flex-row min-h-screen">
+        
+        <!-- Sidebar -->
+        <aside class="w-full md:w-64 bg-white border-e-2 border-gray-100 p-6 md:h-screen md:sticky top-0">
+            <div class="text-center md:text-start">
+                <h1 class="text-xl font-bold text-gray-900">
+                    <span class="lang-fa">مدیریت دفتر وکلا</span>
+                    <span class="lang-en">Advocate Office</span>
+                </h1>
+                <p class="text-sm text-gray-500">
+                    <span class="lang-fa">مستندات فنی</span>
+                    <span class="lang-en">Documentation</span>
+                </p>
+            </div>
+            
+            <nav class="mt-8">
+                <div class="flex justify-between items-center mb-6">
+                    <span class="text-sm font-semibold text-gray-500">
+                        <span class="lang-fa">منو</span>
+                        <span class="lang-en">MENU</span>
+                    </span>
+                    <button id="lang-switcher" class="text-sm font-bold text-blue-600 hover:text-blue-800 transition">
+                        <span class="lang-fa">English</span>
+                        <span class="lang-en">فارسی</span>
+                    </button>
+                </div>
+                <ul class="space-y-2" id="navigation">
+                    <li><a href="#introduction" class="nav-link flex items-center gap-x-3.5 p-3 rounded-lg text-base text-gray-700 hover:bg-gray-100 bg-gray-100 font-bold">معرفی</a></li>
+                    <li><a href="#features" class="nav-link flex items-center gap-x-3.5 p-3 rounded-lg text-base text-gray-700 hover:bg-gray-100">قابلیت‌ها</a></li>
+                    <li><a href="#requirements" class="nav-link flex items-center gap-x-3.5 p-3 rounded-lg text-base text-gray-700 hover:bg-gray-100">نیازمندی‌ها</a></li>
+                    <li><a href="#installation" class="nav-link flex items-center gap-x-3.5 p-3 rounded-lg text-base text-gray-700 hover:bg-gray-100">راهنمای نصب</a></li>
+                    <li><a href="#settings" class="nav-link flex items-center gap-x-3.5 p-3 rounded-lg text-base text-gray-700 hover:bg-gray-100">تنظیمات</a></li>
+                    <li><a href="#support" class="nav-link flex items-center gap-x-3.5 p-3 rounded-lg text-base text-gray-700 hover:bg-gray-100">پشتیبانی</a></li>
+                </ul>
+            </nav>
+
+            <div class="mt-auto pt-6 text-center">
+                 <a class="nav-link inline-block w-full py-3 px-4 text-center text-sm font-medium rounded-lg text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2" href="https://faroos-lawfirm.ir" target="_blank">
+                    <span class="lang-fa">مشاهده دمو</span>
+                    <span class="lang-en">View Demo</span>
+                </a>
+                <p class="mt-4 text-xs text-gray-500">
+                    <span class="lang-fa">توسعه‌دهنده: عمید احدی</span>
+                    <span class="lang-en">Developer: Amid Ahadi</span><br>
+                    <span class="lang-fa">شرکت: Cyber Security</span>
+                    <span class="lang-en">Company: c-security.ir</span>
+                </p>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="flex-1 p-4 sm:p-6 lg:p-10">
+            
+            <!-- Introduction Section -->
+            <div id="introduction" class="content-section active">
+                <div class="lang-fa">
+                    <h2 class="text-3xl font-bold mb-4">معرفی سیستم</h2>
+                    <p class="text-lg text-gray-600 mb-6 leading-relaxed">این بخش یک نمای کلی از سیستم مدیریت دفتر وکلا، هدف اصلی و تاریخچه آن ارائه می‌دهد. این نرم‌افزار برای ساده‌سازی و بهینه‌سازی فرآیندهای کاری در دفاتر حقوقی طراحی شده است.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <p class="text-gray-700 leading-loose">
+						
+                            سیستم مدیریت دفتر وکلا (Sohrevardi Online System) یک راهکار جامع برای مدیریت عملیات روزمره دفاتر حقوقی و وکالت است. ابزارهای لازم برای سازماندهی پرونده‌ها، مشتریان، جلسات، حسابداری و ارتباطات را فراهم می‌کند. هدف این سیستم، بهبود بهره‌وری و کارایی در دفاتر وکالت از طریق یک پلتفرم متمرکز و کاربرپسند است.
+
+                        </p>
+                    </div>
+                </div>
+                <div class="lang-en">
+                    <h2 class="text-3xl font-bold mb-4">System Overview</h2>
+                    <p class="text-lg text-gray-600 mb-6 leading-relaxed">This section provides an overview of the Advocate Office Management System, its primary purpose, and its history. The software is designed to simplify and optimize workflows in legal firms.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <p class="text-gray-700 leading-loose">
+                            Advocate Office Management System is a comprehensive solution designed to streamline the daily operations of legal firms and advocate offices. Originally acquired from Envato, this system provides essential tools for organizing cases, clients, appointments, accounting, and communications. Its primary goal is to enhance productivity and efficiency in legal practices through a centralized and user-friendly platform.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Features Section -->
+            <div id="features" class="content-section">
+                 <div class="lang-fa">
+                    <h2 class="text-3xl font-bold mb-4">قابلیت‌های اصلی</h2>
+                    <p class="text-lg text-gray-600 mb-6 leading-relaxed">در این بخش، مهم‌ترین قابلیت‌هایی که این سیستم برای مدیریت دفاتر وکالت ارائه می‌دهد، به صورت بصری نمایش داده شده است. هر قابلیت برای رفع یکی از نیازهای کلیدی دفاتر حقوقی طراحی شده است.</p>
+                </div>
+                 <div class="lang-en">
+                    <h2 class="text-3xl font-bold mb-4">Key Features</h2>
+                    <p class="text-lg text-gray-600 mb-6 leading-relaxed">This section visually showcases the most important features the system offers for managing legal offices. Each feature is designed to address a key need of law firms.</p>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200 hover:shadow-md transition-shadow">
+                        <div class="text-3xl mb-3">🗂️</div>
+                        <h3 class="font-bold text-lg mb-2"><span class="lang-fa">مدیریت پرونده و موکلین</span><span class="lang-en">Case & Client Management</span></h3>
+                        <p class="text-gray-600 text-sm"><span class="lang-fa">پیگیری آسان پرونده‌ها و اطلاعات جامع موکلین.</span><span class="lang-en">Easy tracking of cases and comprehensive client information.</span></p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200 hover:shadow-md transition-shadow">
+                        <div class="text-3xl mb-3">📅</div>
+                        <h3 class="font-bold text-lg mb-2"><span class="lang-fa">مدیریت جلسات و زمان‌بندی</span><span class="lang-en">Appointment & Scheduling</span></h3>
+                        <p class="text-gray-600 text-sm"><span class="lang-fa">برنامه‌ریزی و یادآوری جلسات دادگاه و مشاوره.</span><span class="lang-en">Planning and reminders for court hearings and consultations.</span></p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200 hover:shadow-md transition-shadow">
+                        <div class="text-3xl mb-3">💰</div>
+                        <h3 class="font-bold text-lg mb-2"><span class="lang-fa">مدیریت امور مالی</span><span class="lang-en">Financial Management</span></h3>
+                        <p class="text-gray-600 text-sm"><span class="lang-fa">ردیابی هزینه‌ها، درآمدها و صورتحساب‌ها.</span><span class="lang-en">Tracking expenses, revenues, and invoices.</span></p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200 hover:shadow-md transition-shadow">
+                        <div class="text-3xl mb-3">🔔</div>
+                        <h3 class="font-bold text-lg mb-2"><span class="lang-fa">سیستم اطلاع‌رسانی</span><span class="lang-en">Notification System</span></h3>
+                        <p class="text-gray-600 text-sm"><span class="lang-fa">ارسال ایمیل و اعلانات خودکار برای رویدادهای مهم.</span><span class="lang-en">Automatic email and in-app notifications for important events.</span></p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200 hover:shadow-md transition-shadow">
+                        <div class="text-3xl mb-3">👥</div>
+                        <h3 class="font-bold text-lg mb-2"><span class="lang-fa">مدیریت کاربران و نقش‌ها</span><span class="lang-en">User & Role Management</span></h3>
+                        <p class="text-gray-600 text-sm"><span class="lang-fa">تعریف سطوح دسترسی مختلف برای کارکنان.</span><span class="lang-en">Defining different access levels for staff members.</span></p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200 hover:shadow-md transition-shadow">
+                        <div class="text-3xl mb-3">🌐</div>
+                        <h3 class="font-bold text-lg mb-2"><span class="lang-fa">پشتیبانی از چند زبان</span><span class="lang-en">Multi-language Support</span></h3>
+                        <p class="text-gray-600 text-sm"><span class="lang-fa">قابلیت افزودن و مدیریت زبان‌های مختلف.</span><span class="lang-en">Ability to add and manage various languages.</span></p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Requirements Section -->
+            <div id="requirements" class="content-section">
+                <div class="lang-fa">
+                    <h2 class="text-3xl font-bold mb-4">نیازمندی‌های سرور</h2>
+                    <p class="text-lg text-gray-600 mb-6 leading-relaxed">برای نصب و اجرای موفقیت‌آمیز سیستم، سرور شما باید این پیش‌نیازهای فنی را داشته باشد. مطمئن شوید که همه موارد قبل از شروع نصب فراهم هستند.</p>
+                </div>
+                <div class="lang-en">
+                    <h2 class="text-3xl font-bold mb-4">Server Requirements</h2>
+                    <p class="text-lg text-gray-600 mb-6 leading-relaxed">For a successful installation and operation, your server must meet these technical prerequisites. Ensure all items are checked before starting.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                    <ul class="space-y-4">
+                        <li class="flex items-center"><span class="text-blue-500 text-xl me-3">🖥️</span> <span class="lang-fa"><b>سرور محلی:</b> XAMPP, WAMP, AMPPS یا هر وب سرور مشابه.</span><span class="lang-en"><b>Local Server:</b> XAMPP, WAMP, AMPPS, or any similar web server.</span></li>
+                        <li class="flex items-center"><span class="text-blue-500 text-xl me-3">🐘</span> <span class="lang-fa"><b>PHP:</b> نسخه ۷.۴ به بالا (نسخه ۸.۱ بهینه است).</span><span class="lang-en"><b>PHP:</b> Version 7.4 or higher (version 8.1 is optimized).</span></li>
+                        <li class="flex items-center"><span class="text-blue-500 text-xl me-3">🐬</span> <span class="lang-fa"><b>MySQL:</b> نسخه ۵.۷ به بالا.</span><span class="lang-en"><b>MySQL:</b> Version 5.7 or higher.</span></li>
+                        <li class="flex items-center"><span class="text-blue-500 text-xl me-3">🔄</span> <span class="lang-fa"><b>Mod Rewrite:</b> ماژول `mod_rewrite` آپاچی باید فعال باشد.</span><span class="lang-en"><b>Mod Rewrite:</b> Apache's `mod_rewrite` module must be enabled.</span></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Installation Section -->
+            <div id="installation" class="content-section">
+                <div class="lang-fa">
+                    <h2 class="text-3xl font-bold mb-4">راهنمای نصب گام به گام</h2>
+                    <p class="text-lg text-gray-600 mb-6 leading-relaxed">این راهنما شما را در تمام مراحل نصب سیستم، از آپلود فایل‌ها تا ورود اولیه، همراهی می‌کند. برای مشاهده جزئیات هر مرحله، روی عنوان آن کلیک کنید. نمودار زیر مراحل اصلی نصب را نشان می‌دهد.</p>
+                </div>
+                <div class="lang-en">
+                    <h2 class="text-3xl font-bold mb-4">Step-by-Step Installation Guide</h2>
+                    <p class="text-lg text-gray-600 mb-6 leading-relaxed">This guide will walk you through the entire installation process, from uploading files to the initial login. Click on each step to view its details. The chart below illustrates the main installation phases.</p>
+                </div>
+                
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                    <div class="accordion space-y-3">
+                        <div class="accordion-item bg-white border border-gray-200 rounded-lg">
+                            <h3 class="accordion-header w-full flex justify-between items-center text-start p-4 font-semibold cursor-pointer">
+                                <span class="lang-fa">مرحله ۱: آپلود فایل‌ها</span><span class="lang-en">Step 1: Upload Files</span>
+                                <span class="accordion-icon transition-transform">▼</span>
+                            </h3>
+                            <div class="accordion-content overflow-hidden max-h-0 transition-all duration-500">
+                                <p class="p-4 pt-0 text-gray-600"><span class="lang-fa">فایل‌های پروژه را از طریق FTP یا پنل هاست خود به روت وب‌سایت (عموماً پوشه `public_html` یا `htdocs`) منتقل کنید.</span><span class="lang-en">Transfer the project files via FTP or your hosting panel to the website root (usually the `public_html` or `htdocs` folder).</span></p>
+                            </div>
+                        </div>
+                        <div class="accordion-item bg-white border border-gray-200 rounded-lg">
+                             <h3 class="accordion-header w-full flex justify-between items-center text-start p-4 font-semibold cursor-pointer">
+                                <span class="lang-fa">مرحله ۲: تنظیم دیتابیس</span><span class="lang-en">Step 2: Database Setup</span>
+                                <span class="accordion-icon transition-transform">▼</span>
+                            </h3>
+                            <div class="accordion-content overflow-hidden max-h-0 transition-all duration-500">
+                                <p class="p-4 pt-0 text-gray-600"><span class="lang-fa">یک دیتابیس جدید در phpMyAdmin ایجاد کرده و فایل `database.sql` را در آن Import کنید.</span><span class="lang-en">Create a new database in phpMyAdmin and import the `database.sql` file into it.</span></p>
+                            </div>
+                        </div>
+                        <div class="accordion-item bg-white border border-gray-200 rounded-lg">
+                             <h3 class="accordion-header w-full flex justify-between items-center text-start p-4 font-semibold cursor-pointer">
+                                <span class="lang-fa">مرحله ۳: نصب وبی</span><span class="lang-en">Step 3: Web Installer</span>
+                                <span class="accordion-icon transition-transform">▼</span>
+                            </h3>
+                            <div class="accordion-content overflow-hidden max-h-0 transition-all duration-500">
+                                <p class="p-4 pt-0 text-gray-600"><span class="lang-fa">با مراجعه به آدرس وب‌سایت خود، مراحل نصب‌کننده وبی را دنبال کرده و اطلاعات دیتابیس و مدیر را وارد کنید.</span><span class="lang-en">Navigate to your website's address, follow the web installer steps, and enter the database and administrator credentials.</span></p>
+                            </div>
+                        </div>
+                        <div class="accordion-item bg-white border border-gray-200 rounded-lg">
+                             <h3 class="accordion-header w-full flex justify-between items-center text-start p-4 font-semibold cursor-pointer">
+                                <span class="lang-fa">مرحله ۴: ورود به سیستم</span><span class="lang-en">Step 4: Login</span>
+                                <span class="accordion-icon transition-transform">▼</span>
+                            </h3>
+                            <div class="accordion-content overflow-hidden max-h-0 transition-all duration-500">
+                                <p class="p-4 pt-0 text-gray-600"><span class="lang-fa">پس از اتمام نصب، با نام کاربری و رمز عبوری که ایجاد کرده‌اید، وارد پنل مدیریت شوید.</span><span class="lang-en">After installation is complete, log in to the admin panel with the username and password you created.</span></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="chart-container bg-white p-4 rounded-lg shadow-sm border border-gray-200">
+                        <canvas id="installationChart"></canvas>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Settings Section -->
+            <div id="settings" class="content-section">
+                <div class="lang-fa">
+                    <h2 class="text-3xl font-bold mb-4">تنظیمات سیستم</h2>
+                    <p class="text-lg text-gray-600 mb-6 leading-relaxed">پس از نصب، می‌توانید از طریق پنل مدیریت به این بخش‌ها دسترسی داشته و سیستم را مطابق با نیازهای خود شخصی‌سازی کنید. هر بخش تنظیمات به شما امکان کنترل جنبه‌ای از نرم‌افزار را می‌دهد.</p>
+                </div>
+                 <div class="lang-en">
+                    <h2 class="text-3xl font-bold mb-4">System Settings</h2>
+                    <p class="text-lg text-gray-600 mb-6 leading-relaxed">After installation, you can access these sections via the admin panel to customize the system to your needs. Each setting area gives you control over an aspect of the software.</p>
+                </div>
+                <div class="space-y-4">
+                    <div class="bg-white p-4 rounded-lg shadow-sm border border-gray-200 flex items-center gap-4"><span class="text-2xl">⚙️</span><span class="lang-fa"><b>تنظیمات عمومی:</b> نام شرکت، لوگو، آدرس، تلفن و ...</span><span class="lang-en"><b>General Settings:</b> Company name, logo, address, contact info, etc.</span></div>
+                    <div class="bg-white p-4 rounded-lg shadow-sm border border-gray-200 flex items-center gap-4"><span class="text-2xl">👨‍💼</span><span class="lang-fa"><b>تنظیمات HR:</b> مدیریت کارکنان، نقش‌ها و دسترسی‌ها.</span><span class="lang-en"><b>HR Settings:</b> Employee management, roles, and permissions.</span></div>
+                    <div class="bg-white p-4 rounded-lg shadow-sm border border-gray-200 flex items-center gap-4"><span class="text-2xl">📧</span><span class="lang-fa"><b>تنظیمات SMTP:</b> پیکربندی سرور ایمیل برای ارسال اعلانات.</span><span class="lang-en"><b>SMTP Settings:</b> Configure the email server for sending notifications.</span></div>
+                    <div class="bg-white p-4 rounded-lg shadow-sm border border-gray-200 flex items-center gap-4"><span class="text-2xl">📢</span><span class="lang-fa"><b>تنظیمات اعلانات:</b> شخصی‌سازی پیام‌ها و رویدادها.</span><span class="lang-en"><b>Notification Settings:</b> Customize messages and notification events.</span></div>
+                    <div class="bg-white p-4 rounded-lg shadow-sm border border-gray-200 flex items-center gap-4"><span class="text-2xl">🌍</span><span class="lang-fa"><b>افزودن زبان جدید:</b> قابلیت افزودن زبان‌های دیگر به سیستم.</span><span class="lang-en"><b>Add New Language:</b> Ability to add other languages to the system.</span></div>
+                </div>
+            </div>
+
+            <!-- Support Section -->
+            <div id="support" class="content-section">
+                 <div class="lang-fa">
+                    <h2 class="text-3xl font-bold mb-4">پشتیبانی</h2>
+                    <p class="text-lg text-gray-600 mb-6 leading-relaxed">در صورت بروز هرگونه مشکل یا نیاز به راهنمایی، می‌توانید از طریق راه‌های ارتباطی زیر با تیم پشتیبانی در تماس باشید. ما آماده پاسخگویی به سؤالات شما هستیم.</p>
+                </div>
+                <div class="lang-en">
+                     <h2 class="text-3xl font-bold mb-4">Support</h2>
+                    <p class="text-lg text-gray-600 mb-6 leading-relaxed">If you encounter any issues or need assistance, you can contact the support team through the following channels. We are ready to answer your questions.</p>
+                </div>
+                <div class="bg-white p-8 rounded-lg shadow-sm border border-gray-200 text-center">
+                    <p class="text-lg mb-2"><span class="lang-fa">ایمیل پشتیبانی</span><span class="lang-en">Support Email</span></p>
+                    <a href="mailto:amid.ahadi@gmail.com" class="text-xl font-bold text-blue-600 hover:underline">amid.ahadi@gmail.com</a>
+                    <div class="border-t my-6"></div>
+                    <p class="text-lg mb-2"><span class="lang-fa">وب‌سایت / تماس</span><span class="lang-en">Website / Contact</span></p>
+                    <a href="https://c-security.ir" target="_blank" class="text-xl font-bold text-blue-600 hover:underline">C-Security.ir</a>
+                </div>
+            </div>
+
+        </main>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const navLinks = document.querySelectorAll('.nav-link');
+            const contentSections = document.querySelectorAll('.content-section');
+            const langSwitcher = document.getElementById('lang-switcher');
+            const htmlEl = document.documentElement;
+            const navigation = document.getElementById('navigation');
+            
+            const translations = {
+                fa: {
+                    introduction: 'معرفی', features: 'قابلیت‌ها', requirements: 'نیازمندی‌ها',
+                    installation: 'راهنمای نصب', settings: 'تنظیمات', support: 'پشتیبانی',
+                    viewDemo: 'مشاهده دمو'
+                },
+                en: {
+                    introduction: 'Introduction', features: 'Features', requirements: 'Requirements',
+                    installation: 'Installation', settings: 'Settings', support: 'Support',
+                    viewDemo: 'View Demo'
+                }
+            };
+
+            function switchLanguage(lang) {
+                htmlEl.lang = lang;
+                htmlEl.dir = lang === 'fa' ? 'rtl' : 'ltr';
+
+                const navItems = navigation.querySelectorAll('a');
+                navItems.forEach(item => {
+                    const key = item.getAttribute('href').substring(1);
+                    item.textContent = translations[lang][key];
+                });
+            }
+
+            langSwitcher.addEventListener('click', () => {
+                const currentLang = htmlEl.lang;
+                switchLanguage(currentLang === 'fa' ? 'en' : 'fa');
+            });
+            
+            function showSection(hash) {
+                const targetHash = hash || '#introduction';
+                
+                contentSections.forEach(section => {
+                    section.classList.remove('active');
+                });
+                navLinks.forEach(link => {
+                    link.classList.remove('bg-gray-100', 'font-bold');
+                });
+
+                const activeSection = document.querySelector(targetHash);
+                const activeLink = document.querySelector(`a[href="${targetHash}"]`);
+
+                if (activeSection) {
+                    activeSection.classList.add('active');
+                }
+                if(activeLink) {
+                    activeLink.classList.add('bg-gray-100', 'font-bold');
+                }
+            }
+
+            navigation.addEventListener('click', (e) => {
+                if (e.target.tagName === 'A' && e.target.classList.contains('nav-link')) {
+                    e.preventDefault();
+                    const targetId = e.target.getAttribute('href');
+                    history.pushState(null, '', targetId);
+                    showSection(targetId);
+                }
+            });
+            
+            window.addEventListener('popstate', () => {
+                showSection(window.location.hash);
+            });
+
+            showSection(window.location.hash);
+
+            const accordionHeaders = document.querySelectorAll('.accordion-header');
+            accordionHeaders.forEach(header => {
+                header.addEventListener('click', () => {
+                    const content = header.nextElementSibling;
+                    const icon = header.querySelector('.accordion-icon');
+                    
+                    if (content.style.maxHeight) {
+                        content.style.maxHeight = null;
+                        icon.style.transform = 'rotate(0deg)';
+                    } else {
+                        content.style.maxHeight = content.scrollHeight + 'px';
+                        icon.style.transform = 'rotate(180deg)';
+                    }
+                });
+            });
+
+            const ctx = document.getElementById('installationChart').getContext('2d');
+            new Chart(ctx, {
+                type: 'doughnut',
+                data: {
+                    labels: ['File Upload', 'Database Setup', 'Web Installer', 'Login & Setup'],
+                    datasets: [{
+                        label: 'Installation Phases',
+                        data: [25, 25, 25, 25],
+                        backgroundColor: [
+                            'rgba(59, 130, 246, 0.7)',
+                            'rgba(16, 185, 129, 0.7)',
+                            'rgba(249, 115, 22, 0.7)',
+                            'rgba(139, 92, 246, 0.7)'
+                        ],
+                        borderColor: [
+                            'rgba(59, 130, 246, 1)',
+                            'rgba(16, 185, 129, 1)',
+                            'rgba(249, 115, 22, 1)',
+                            'rgba(139, 92, 246, 1)'
+                        ],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            position: 'top',
+                        },
+                        title: {
+                            display: true,
+                            text: 'Installation Process Phases'
+                        }
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
