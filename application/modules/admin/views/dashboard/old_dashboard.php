@@ -363,26 +363,7 @@
 <?php if($access==1){ ?>
 <section class="col-lg-6 connectedSortable ui-sortable">	
 					<div class="box box-primary">
-                                <div class="box-header ui-sortable-handle" style="cursor: move;">
-                                    <i class="fa fa-user"></i>
-                                    <h3 class="box-title"><?php echo lang('today_employees_on_leave')?></h3>
-                            								</div><!-- /.box-header -->
-                                <div class="box-body">
-									
-									         <ul class="todo-list ui-sortable">
-									 <?php $i=1;foreach ($todays_leaves as $new){?>  
-                                        <li>
-                                           <span class="text"><?php echo $new->user; ?></span>
-										   <span class="text label label-success"><?php echo $new->leave_type; ?></span>
-                                            
-                                            <div class="tools">
-                                               <a href="#"> </a>
-                                            </div>
-                                        </li>
-										<?php $i++;}?>
-									</ul>
-
-		                        </div>
+                               
 								
                       </div>
 </section>
@@ -435,29 +416,7 @@
 				<div class="row">	
 					
 					
-					<div class="col-md-9">
-                            <div class="box box-primary">
-						<div class="col-md-12" style="padding:20px">	
-							<select id='lang-selector' class="pull-right"></select>
-						</div>	
-
-                                <div class="box-body no-padding">
-                                    <!-- THE CALENDAR -->
-                                    <div id="calendar"></div>
-                                </div><!-- /.box-body -->
-                            </div><!-- /. box -->
-                        </div><!-- /.col -->
-						<div class="col-md-3">
-                            <div class="box box-primary">
-                                <div class="box-body ">
-                                    <!-- THE CALENDAR -->
-									<h2><?php echo lang('events'); ?></h2>
-                                    <div class="external-event bg-red ui-draggable ui-draggable-handle" style="position: relative;"><?php echo lang('cases'); ?></div>
-									<div class="external-event ui-draggable ui-draggable-handle" style="border-color: rgb(0, 115, 183); color: rgb(255, 255, 255); position: relative; background-color: rgb(0, 115, 183);"><?php echo lang('appointments'); ?></div>
-                                </div><!-- /.box-body -->
-                            </div><!-- /. box -->
-                        </div><!-- /.col -->
-                    </div><!-- /.row -->
+					
 
 					<?php } ?>
      </section><!-- /.content -->	
