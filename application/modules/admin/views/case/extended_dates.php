@@ -1,14 +1,13 @@
 <link href="<?php echo base_url('assets/css/chosen.css')?>" rel="stylesheet" type="text/css" />
 <link href="<?php echo base_url('assets/css/datatables/dataTables.bootstrap.css')?>" rel="stylesheet" type="text/css" />
-<link href="<?php echo base_url('assets/css/jquery.datetimepicker.css')?>" rel="stylesheet" type="text/css" />
-<!-- Content Header (Page header) -->
+<link href="<?php echo base_url('assets/css/kamaDatepicker.min.css')?>" rel="stylesheet" type="text/css" />
+
 <style>
 .row{
 	margin-bottom:10px;
 }
 </style>
- <!-- Content Header (Page header) -->
-<section class="content-header">
+ <section class="content-header">
     <h1>
         <?php echo lang('extended_dates_of_case_no')?> : <?php echo $case->case_no?>
         <small><?php echo $case->title?></small>
@@ -22,72 +21,67 @@
 
 <section class="content">
     <div class="row">
-        <!-- left column -->
         <div class="col-md-12">
-            <!-- general form elements -->
             <div class="box box-primary">
-               
-                <!-- form start -->
-				<?php if(validation_errors()){ ?>		
+                
+                <?php if(validation_errors()){ ?>		
 			<div class="alert alert-danger alert-dismissable">
-                                        <i class="fa fa-ban"></i>
-                                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true"><i class="fa fa-close"></i></button>
-                                        <b><?php echo lang('alert')?>!</b><?php echo validation_errors(); ?>
-                                    </div>
+                                             <i class="fa fa-ban"></i>
+                                             <button type="button" class="close" data-dismiss="alert" aria-hidden="true"><i class="fa fa-close"></i></button>
+                                             <b><?php echo lang('alert')?>!</b><?php echo validation_errors(); ?>
+                                         </div>
 		<?php } ?>	
 				<form method="post" action="<?php echo site_url('admin/cases/dates/'.$id)?>" enctype="multipart/form-data">
                     <div class="box-body">
                         <div class="form-group">
                         	<div class="row">
-                                <div class="col-md-3">
-                                	<b><?php echo lang('curdate')?></b>
+                                 <div class="col-md-3">
+                                 	<b><?php echo lang('curdate')?></b>
 								</div>
 								<div class="col-md-4">
-                                    
-									<input type="text" name="date" value="" class="form-control">
-                                </div>
+                                        
+									<input type="text" name="date" id="jalali-datepicker-current" value="" class="form-control" autocomplete="off">
+                                 </div>
                             </div>
                         </div>
 						
 						  <div class="form-group">
                         	<div class="row">
-                                <div class="col-md-3">
-                                	<b><?php echo lang('lastdate')?></b>
+                                 <div class="col-md-3">
+                                 	<b><?php echo lang('lastdate')?></b>
 								</div>
 								<div class="col-md-4">
-                                    
-									<input type="text" name="date2" value="" class="form-control ">
-                                </div>
+                                        
+									<input type="text" name="date2" id="jalali-datepicker-last" value="" class="form-control" autocomplete="off">
+                                 </div>
                             </div>
                         </div>
-					   
-					   
+					  
+					  
 						<div class="form-group">
                         	<div class="row">
-                                <div class="col-md-3">
-                                	<b><?php echo lang('notes')?></b>
+                                 <div class="col-md-3">
+                                 	<b><?php echo lang('notes')?></b>
 								</div>
 								<div class="col-md-4">
-                                   <textarea name="notes" class="form-control"/></textarea>
-                                </div>
+                                        <textarea name="notes" class="form-control"/></textarea>
+                                 </div>
                             </div>
                         </div>
 						
 						
 						<div class="form-group">
                         	<div class="row">
-                                <div class="col-md-3">
-                                	<b><?php echo lang('attachment')?> <?php echo lang('document')?></b>
+                                 <div class="col-md-3">
+                                 	<b><?php echo lang('attachment')?> <?php echo lang('document')?></b>
 								</div>
 								<div class="col-md-4">
-                                   <input type="file" name="img" value="" class="form-control"/>
-                                </div>
+                                        <input type="file" name="img" value="" class="form-control"/>
+                                 </div>
                             </div>
                         </div>
 						
-				  </div><!-- /.box-body -->
-    
-                    <div class="box-footer">
+				  </div><div class="box-footer">
                         <button  type="submit" class="btn btn-primary"><?php echo lang('save')?></button>
                     </div>
 					
@@ -124,24 +118,21 @@
 									 <a class="btn btn-primary"  href="<?php echo site_url('admin/cases/dates_detail/'.$new->id); ?>"><i class="fa fa-eye"></i> <?php echo lang('view')?></a>
 									 <?php } ?>
 								<?php if(check_user_role(171)==1){?>			 
-                                         <a class="btn btn-danger" style="margin-left:20px;" href="<?php echo site_url('admin/cases/delete_history/'.$new->id); ?>" onclick="return areyousure()"><i class="fa fa-trash"></i> <?php echo lang('delete')?></a>
-                                  <?php } ?>      
+                                             <a class="btn btn-danger" style="margin-left:20px;" href="<?php echo site_url('admin/cases/delete_history/'.$new->id); ?>" onclick="return areyousure()"><i class="fa fa-trash"></i> <?php echo lang('delete')?></a>
+                                     <?php } ?>      
                                     </td>
                                 </tr>
                                 <?php $i++;}?>
                         </tbody>
                         <?php endif;?>
                     </table>
-				</div><!-- /.box-body -->
-             </form>
-            </div><!-- /.box -->
-        </div>
-     </div>
-</section>  
+				</div></form>
+            </div></div>
+       </div>
+</section>	
 
+<script src="<?php echo base_url('assets/js/kamaDatepicker.min.js')?>" type="text/javascript"></script>
 
-
-<script src="<?php echo base_url('assets/js/jquery.datetimepicker.js')?>" type="text/javascript"></script>
 <script src="<?php echo base_url('assets/js/plugins/datatables/jquery.dataTables.js')?>" type="text/javascript"></script>
 <script src="<?php echo base_url('assets/js/plugins/datatables/dataTables.bootstrap.js')?>" type="text/javascript"></script>
 
@@ -151,8 +142,16 @@
 $(function() {
 	$('#example1').dataTable({
 	});
+
+    //  KamaDatepicker 
+    kamaDatepicker('jalali-datepicker-current', {
+        format: 'YYYY-MM-DD', 
+    });
+
+    kamaDatepicker('jalali-datepicker-last', {
+        format: 'YYYY-MM-DD',
+        
+    });
 });
 
- 
-  
 </script>

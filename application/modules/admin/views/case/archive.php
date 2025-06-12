@@ -95,7 +95,7 @@
                                 	<b><?php echo lang('close');?> <?php echo lang('date');?></b>
 								</div>
 								<div class="col-md-4">
-                                   <input type="text" name="close_date" value="" class="form-control"/>
+                                   <input type="text" name="close_date" id="close_date" value="" class="form-control" autocomplete="off"/>
                                 </div>
                             </div>
                         </div>
@@ -110,39 +110,27 @@
         </div>
      </div>
 </section>  
+<script src="<?php echo base_url('assets/js/chosen.jquery.min.js')?>" type="text/javascript"></script>
 <script src="<?php echo base_url('assets/js/jquery.datetimepicker.js')?>" type="text/javascript"></script>
+<script src="<?php echo base_url('assets/js/kamaDatepicker.min.js')?>" type="text/javascript"></script>
 <script type="text/javascript">
 $(function() {
-	
-	$('.chzn').chosen();
-	
-});
 
-   jQuery('.datepicker').datetimepicker({
- lang:'en',
- i18n:{
-  de:{
-   months:[
-    'Januar','Februar','März','April',
-    'Mai','Juni','Juli','August',
-    'September','Oktober','November','Dezember',
-   ],
-   dayOfWeek:[
-    "So.", "Mo", "Di", "Mi", 
-    "Do", "Fr", "Sa.",
-   ]
-  }
- },
- timepicker:false,
- format:'Y-m-d'
+	$('.chzn').chosen({width: "100%"}); // Added width option for better responsiveness
+
 });
-  //$(function() {
-//   $('.datepicker').datetimepicker({
-//	//mask:'9999-19-39 29:59',
-//	format  : 'Y-m-d'
-//	
-//	}
-//	
-//	);
-//  });
+// --- Persian Datepicker Initialization ---
+$(document).ready(function() {
+    if (document.getElementById('close_date')) {
+        kamaDatepicker('close_date', {
+            buttonsColor: "blue",
+            forceFarsiDigits: true,
+            markToday: true,
+            gotoToday: true,
+            format: 'YYYY/MM/DD'
+        });
+    }
+});
+// --- End Persian Datepicker Initialization ---
+
 </script>
