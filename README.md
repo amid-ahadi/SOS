@@ -73,7 +73,8 @@ Mod Rewrite: ماژول mod_rewrite آپاچی باید فعال باشد.
 
 ایمیل پشتیبانی: amid.ahadi@gmail.com
 
-وب‌سایت / لینک دمو: https://faroos-lawfirm.ir
+بيشتر: https://c-security.ir/Help.html
+
 
 English
 System Overview
@@ -151,7 +152,7 @@ For any questions, issues, or support needs, you can contact us through the foll
 
 Support Email: amid.ahadi@gmail.com
 
-Website / Demo Link: https://faroos-lawfirm.ir
+More: https://c-security.ir/Help.html
 
 Customization Information:
 Company/Office Name (Persian): Cyber Security
